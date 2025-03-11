@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-space-900 { background-color: #0a0e17; }
+  .bg-space-800 { background-color: #121927; }
+  .bg-space-700 { background-color: #1a2333; }
+  .bg-space-600 { background-color: #2d3848; }
+  .text-space-300 { color: #a0aec0; }
+}
+
+.codesandbox-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 80vh;
+  }
+  
+  .multiplayer-challenge {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+  }
+  
+  .peer-list {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    background: #1a1a1a;
+  }
+  
+  .peer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: #2a2a2a;
+    border-radius: 4px;
+  }
