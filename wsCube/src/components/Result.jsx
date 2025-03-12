@@ -15,40 +15,40 @@ const Result = () => {
     labels: ['Correct', 'Incorrect'],
     datasets: [{
       data: [score, total - score],
-      backgroundColor: ['#3B82F6', '#1E293B'],
-      hoverBackgroundColor: ['#2563EB', '#0F172A'],
+      backgroundColor: ['#4F46E5', '#E0E7FF'],
+      hoverBackgroundColor: ['#4338CA', '#C7D2FE'],
       borderWidth: 0,
     }]
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 flex flex-col items-center justify-center p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex flex-col items-center justify-center p-8">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="max-w-4xl w-full space-y-8"
       >
-        <h1 className="text-4xl font-bold text-center text-white mb-8">
-          {questType} Quest Results
+        <h1 className="text-4xl font-bold text-center text-slate-800 mb-8 pt-10">
+          {questType?.toUpperCase()} QUEST RESULTS
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Chart Section */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
-            <h2 className="text-2xl font-semibold mb-6 text-blue-400">
+          <div className="bg-white backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-slate-100">
+            <h2 className="text-2xl font-semibold mb-6 text-indigo-600">
               Performance Overview
             </h2>
             <div className="max-w-xs mx-auto">
               <Doughnut data={data} />
             </div>
-            <div className="mt-6 text-center text-xl font-bold">
+            <div className="mt-6 text-center text-xl font-bold text-slate-700">
               {score}/{total} Correct Answers
             </div>
           </div>
 
           {/* Recommendations */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8">
-            <h2 className="text-2xl font-semibold mb-6 text-green-400">
+          <div className="bg-white backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-slate-100">
+            <h2 className="text-2xl font-semibold mb-6 text-teal-600">
               AI Learning Path
             </h2>
             <div className="space-y-4">
@@ -57,11 +57,11 @@ const Result = () => {
                   key={index}
                   initial={{ x: -20 }}
                   animate={{ x: 0 }}
-                  className="p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                  className="p-4 bg-indigo-50/50 rounded-lg hover:bg-indigo-50 transition-colors group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="h-2 w-2 bg-blue-400 rounded-full" />
-                    <span>{rec}</span>
+                    <div className="h-2 w-2 bg-indigo-400 rounded-full transition-colors group-hover:bg-indigo-600" />
+                    <span className="text-slate-700 group-hover:text-slate-900">{rec}</span>
                   </div>
                 </motion.div>
               ))}
@@ -69,11 +69,11 @@ const Result = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 pb-10">
           <button
             onClick={() => navigate(-1)}
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold
-                     transition-all transform hover:scale-105 active:scale-95"
+            className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold
+                     transition-all transform hover:scale-105 active:scale-95 shadow-md hover:shadow-indigo-100"
           >
             Back to Dashboard
           </button>
