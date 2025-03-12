@@ -52,13 +52,14 @@ const IslandSelection = ({ user }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-space-900 to-space-950 text-white">
       <div className="container mx-auto px-4 py-16">
-        <motion.h1
-          className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-        >
-          Choose Your Learning Island, {user.name}! 🗺️
-        </motion.h1>
+      <motion.h1
+        className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+      >
+        Choose Your Learning Island, {user.name}! <span className="text-black">🗺️</span>
+      </motion.h1>
+
 
         <div className="flex justify-center items-center">
           {islands.slice(currentPage, currentPage + itemsPerPage).map((island) => (
