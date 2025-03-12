@@ -15,7 +15,8 @@ import HtmlBasics from "./Pages/Activities/HtmlActivity";
 import Leaderboard from "./components/Leaderboard";
 import { MultiplayerProvider } from "./features/MultiplayerChallenge/multiplayerContext.jsx";
 import { PointsProvider } from "./features/GameSystem/PointsContext";
-
+import Quest from "./components/Quest";
+import Result from './components/Result';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -98,6 +99,10 @@ function App() {
                     )
                   }
                 />
+
+                <Route path="/quest/:questType" element={<Quest />} />
+
+                <Route path="/result" element={<Result />} />
 
                 {/* Protected Route: Island Dashboard */}
                 <Route

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import AIAssistant from "./AIAssistant";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ISLAND_SCENES = {
   "web-dev": "https://prod.spline.design/EQ2siQLXgHSmqmKq/scene.splinecode",
@@ -15,23 +15,23 @@ const ISLAND_SCENES = {
 
 const DEFAULT_QUESTS = {
   "web-dev": [
-    { title: "HTML Basics", description: "Learn the fundamentals of HTML." },
-    { title: "CSS Styling", description: "Master CSS for beautiful designs." },
+    { title: "HTML Basics", description: "Learn the fundamentals of HTML.", type: "html" },
+    { title: "CSS Styling", description: "Master CSS for beautiful designs.", type: "css" },
   ],
   "digital-marketing": [
-    { title: "SEO Basics", description: "Learn how to optimize for search engines." },
-    { title: "Social Media", description: "Master social media marketing." },
+    { title: "SEO Basics", description: "Learn how to optimize for search engines.", type: "seo" },
+    { title: "Social Media", description: "Master social media marketing.", type: "social-media" },
   ],
   // Add quests for other islands
 };
 
 const IslandDashboard = ({ user }) => {
   const { islandId } = useParams();
+  const navigate = useNavigate();
 
   // Ensure user.progress is defined
   const [progress, setProgress] = useState(user?.progress?.[islandId] || 0);
   const [difficulty, setDifficulty] = useState(user?.aiSettings?.difficulty || 1.0);
-  const [activeQuest, setActiveQuest] = useState(null);
 
   // Get quests for the current island or use default quests
   const QUESTS = DEFAULT_QUESTS[islandId] || [];
@@ -44,6 +44,10 @@ const IslandDashboard = ({ user }) => {
         ? difficulty * 0.8
         : difficulty;
     setDifficulty(Math.min(Math.max(newDifficulty, 0.5), 2.0));
+  };
+
+  const handleQuestClick = (quest) => {
+    navigate(`/quest/${quest.type}`, { state: { quest } });
   };
 
   return (
@@ -88,7 +92,7 @@ const IslandDashboard = ({ user }) => {
             key={index}
             whileHover={{ y: -10 }}
             className="bg-black/50 p-6 rounded-2xl backdrop-blur-md cursor-pointer"
-            onClick={() => setActiveQuest(quest)}
+            onClick={() => handleQuestClick(quest)}
           >
             <h3 className="text-xl font-bold mb-2">{quest.title}</h3>
             <p className="text-sm opacity-75">{quest.description}</p>
