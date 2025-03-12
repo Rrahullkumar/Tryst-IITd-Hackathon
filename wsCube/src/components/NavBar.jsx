@@ -18,14 +18,14 @@ const NavBar = ({ user, onLogin, onLogout }) => {
       <div className="flex space-x-8">
         {/* Explore Courses Dropdown */}
         <Menu as="div" className="relative">
-          <Menu.Button className="text-white text-lg hover:text-blue-400 transition-colors">
+           <Menu.Button className="text-white text-lg hover:text-blue-400 transition-colors px-6 py-2 min-w-[160px] text-center">
             Explore Courses &#9662;
           </Menu.Button>
           <Menu.Items className="absolute bg-gray-800 text-white rounded-lg mt-2 p-2 shadow-lg">
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#data-analytics"
+                  href="https://www.wscubetech.com/data-analytics-course"
                   className={`block px-4 py-2 ${active ? "bg-gray-700" : ""}`}
                 >
                   Data Analytics
@@ -35,7 +35,7 @@ const NavBar = ({ user, onLogin, onLogout }) => {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#digital-marketing"
+                  href="https://www.wscubetech.com/marketing"
                   className={`block px-4 py-2 ${active ? "bg-gray-700" : ""}`}
                 >
                   Digital Marketing
@@ -55,7 +55,7 @@ const NavBar = ({ user, onLogin, onLogout }) => {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#app-dev"
+                  href="https://www.wscubetech.com/mobile-app-development-course"
                   className={`block px-4 py-2 ${active ? "bg-gray-700" : ""}`}
                 >
                   App Development
@@ -65,7 +65,7 @@ const NavBar = ({ user, onLogin, onLogout }) => {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#cybersecurity"
+                  href="https://www.wscubetech.com/cyber-security"
                   className={`block px-4 py-2 ${active ? "bg-gray-700" : ""}`}
                 >
                   Cybersecurity
@@ -77,7 +77,8 @@ const NavBar = ({ user, onLogin, onLogout }) => {
 
         {/* Career Schools Dropdown */}
         <Menu as="div" className="relative">
-          <Menu.Button className="text-white text-lg hover:text-blue-400 transition-colors">
+        <Menu.Button className="text-white text-lg hover:text-blue-400 transition-colors px-6 py-2 min-w-[160px] text-center">
+
             Career Schools &#9662;
           </Menu.Button>
           <Menu.Items className="absolute bg-gray-800 text-white rounded-lg mt-2 p-2 shadow-lg">

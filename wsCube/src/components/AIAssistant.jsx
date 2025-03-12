@@ -5,7 +5,7 @@ import { FiActivity, FiTrendingUp, FiSmile } from 'react-icons/fi';
 const AIAssistant = ({ difficulty, learningStyle, onAdjust }) => {
   return (
     <motion.div 
-      className="absolute top-40 right-4 bg-black/50 p-6 rounded-2xl backdrop-blur-md w-80"
+      className="absolute top-40 right-4 bg-white/50 p-6 rounded-2xl backdrop-blur-md w-80"
       initial={{ x: 100 }}
       animate={{ x: 0 }}
     >
@@ -22,7 +22,7 @@ const AIAssistant = ({ difficulty, learningStyle, onAdjust }) => {
                 key={level}
                 onClick={() => onAdjust(level)}
                 className={`px-3 py-1 rounded-full ${
-                  difficulty === level ? 'bg-cyan-400 text-black' : 'bg-white/10'
+                  difficulty === level ? 'bg-cyan-400 text-white' : 'bg-white/10'
                 }`}
               >
                 {level}x
