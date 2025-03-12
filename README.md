@@ -1,4 +1,4 @@
-gamified learning platform
+Gamified learning platform
 
 🚀 Introduction
 SkillQuest is an innovative gamified learning platform designed to make skill acquisition a thrilling adventure. By combining engaging game mechanics with AI-driven personalized learning paths, SkillQuest transforms conventional education into a dynamic, interactive experience.
