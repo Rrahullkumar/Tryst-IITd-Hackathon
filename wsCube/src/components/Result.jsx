@@ -11,6 +11,15 @@ const Result = () => {
   const navigate = useNavigate();
   const { score, total, questType, recommendations } = state || {};
 
+  // Dummy leaderboard data
+  const leaderboard = [
+    { name: "Alice", score: 95, badge: "🏆" },
+    { name: "Bob", score: 90, badge: "🥈" },
+    { name: "Charlie", score: 85, badge: "🥉" },
+    { name: "Diana", score: 80, badge: "⭐" },
+    { name: "Eve", score: 75, badge: "🌟" },
+  ];
+
   const data = {
     labels: ['Correct', 'Incorrect'],
     datasets: [{
@@ -66,6 +75,32 @@ const Result = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Leaderboard Section */}
+        <div className="bg-white backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-slate-100">
+          <h2 className="text-2xl font-semibold mb-6 text-purple-600">
+            Top Performers
+          </h2>
+          <div className="space-y-4">
+            {leaderboard.map((student, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-center justify-between p-4 bg-purple-50/50 rounded-lg hover:bg-purple-50 transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-lg font-semibold text-purple-600">
+                    {student.badge}
+                  </span>
+                  <span className="text-slate-700">{student.name}</span>
+                </div>
+                <span className="text-slate-700 font-bold">{student.score} Points</span>
+              </motion.div>
+            ))}
           </div>
         </div>
 
