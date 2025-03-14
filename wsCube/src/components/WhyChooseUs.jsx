@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaRocket, FaBrain, FaGlobeAmericas, FaMagic, FaMedal, FaUserAstronaut } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
 
 const WhyChooseUs = () => {
+  const navigate = useNavigate();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -106,6 +108,7 @@ const WhyChooseUs = () => {
           <motion.div
             className="inline-block relative group"
             whileHover={{ scale: 1.05 }}
+            onClick={() => navigate("/islands")} // Navigate on click
           >
             <div className="absolute inset-0 bg-cyan-400 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
 

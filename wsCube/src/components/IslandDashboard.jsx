@@ -56,7 +56,7 @@ const IslandDashboard = ({ user }) => {
       <Spline scene={ISLAND_SCENES[islandId]} className="absolute inset-0 z-0" />
 
       {/* Overlay UI */}
-      <div className="absolute top-40 left-4 bg-black/50 p-6 rounded-2xl backdrop-blur-md">
+      <div className="absolute top-40 left-4 bg-white/50 p-6 rounded-2xl backdrop-blur-md">
         <h2 className="text-3xl font-bold mb-4">{user?.name}'s Progress</h2>
         <div className="h-2 bg-gray-800 rounded-full mb-4">
           <div
@@ -92,7 +92,7 @@ const IslandDashboard = ({ user }) => {
             key={index}
             whileHover={{ y: -10 }}
             className="bg-black/50 p-6 rounded-2xl backdrop-blur-md cursor-pointer"
-            onClick={() => handleQuestClick(quest)}
+            onClick={() => setActiveQuest(quest)}
           >
             <h3 className="text-xl font-bold mb-2">{quest.title}</h3>
             <p className="text-sm opacity-75">{quest.description}</p>
